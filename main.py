@@ -8,7 +8,7 @@ generator = pipeline("text2text-generation", model="t5-small")  # Or any LLM you
 def generate():
     data = request.get_json()
     prompt = data.get("prompt", "")
-    result = generator(prompt, max_length=100, do_sample=True)
+    result = generator(prompt, max_length=200, do_sample=True)
     return jsonify(result)
 
 
